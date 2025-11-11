@@ -28,8 +28,6 @@
     <ClCompile Include="source\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\imgui\GLFW\glfw3.h" />
-    <ClInclude Include="include\imgui\GLFW\glfw3native.h" />
     <ClInclude Include="include\imgui\imconfig.h" />
     <ClInclude Include="include\imgui\imgui.h" />
     <ClInclude Include="include\imgui\imgui_impl_glfw.h" />
@@ -108,6 +106,18 @@
     <OutDir>$(ProjectDir)\build\$(PlatformShortName)\</OutDir>
     <IntDir>$(ProjectDir)\build\intermediates\$(Configuration)\$(PlatformShortName)\$(ProjectName)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -115,7 +125,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,7 +134,8 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\glfw\$(PlatformShortName)</AdditionalLibraryDirectories>
@@ -138,7 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir)include\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -150,7 +161,8 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\glfw\$(PlatformShortName)</AdditionalLibraryDirectories>
@@ -163,7 +175,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -172,7 +184,8 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\glfw\$(PlatformShortName)</AdditionalLibraryDirectories>
@@ -186,7 +199,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir)include\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -198,7 +211,8 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(ProjectDir)lib\glfw\$(PlatformShortName)</AdditionalLibraryDirectories>

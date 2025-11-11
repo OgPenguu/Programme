@@ -38,12 +38,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\imgui\GLFW\glfw3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\imgui\GLFW\glfw3native.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\imgui\imconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>

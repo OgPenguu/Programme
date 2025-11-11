@@ -21,12 +21,21 @@
     <ClCompile Include="interface\interface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="interface\gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\globals\globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="interface\interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="interface\variables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="interface\interface.h">
+    <ClInclude Include="backend\globals\globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
